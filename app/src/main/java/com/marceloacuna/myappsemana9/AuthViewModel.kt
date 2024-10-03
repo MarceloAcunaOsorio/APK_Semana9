@@ -55,13 +55,19 @@ class AuthViewModel : ViewModel() {
 
 
     //login
-    fun Registrar(nombreCompleto : String ,email : String, password : String){
+    fun Registrar(email: String, password: String, confirmarpassword: String){
 
         if(email.isEmpty())
         {
             _authState.value = AuthState.Error("Email invalido")
             return
         }
+        else if(password != confirmarpassword)
+        {
+            _authState.value = AuthState.Error("password no coinciden")
+            return
+        }
+
         else if(password.isEmpty())
         {
             _authState.value = AuthState.Error("password invalida")

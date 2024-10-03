@@ -40,11 +40,11 @@ import java.util.Calendar
 fun Registrar(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
 
     //se declara variable para capturar los datos ingresados
-    var nombrecompleto by remember { mutableStateOf("") }
+    //var nombrecompleto by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmarpassword by remember { mutableStateOf("") }
-    var direccion by remember { mutableStateOf("") }
+    //var direccion by remember { mutableStateOf("") }
 
     val authState = authViewModel.authState.observeAsState()
     val context = LocalContext.current

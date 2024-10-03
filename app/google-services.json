@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888393011817",
+    "project_id": "apksemana9",
+    "storage_bucket": "apksemana9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888393011817:android:2ccbc0feea7a28e35448f8",
+        "android_client_info": {
+          "package_name": "com.marceloacuna.myappsemana9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARAs70sP5V8yK9A2awfsU746y_ry_G3No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

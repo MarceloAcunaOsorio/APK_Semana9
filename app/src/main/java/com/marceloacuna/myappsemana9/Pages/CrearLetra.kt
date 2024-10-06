@@ -40,9 +40,6 @@ fun crealetra(){
     var errorMessage by remember { mutableStateOf("") }
     var context = LocalContext.current
 
-
-
-
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally)

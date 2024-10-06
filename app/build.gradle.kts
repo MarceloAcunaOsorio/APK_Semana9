@@ -68,6 +68,11 @@ dependencies {
     implementation(libs.firebase.crashlytics.buildtools)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.firebase.storage)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -110,4 +115,17 @@ dependencies {
 
     //dependencias de JUnit
     testImplementation ("junit:junit:4.13.2")
+
+
+    //dependencia de runtime
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+
+    //dependencia de play service location
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    //dependencia de mapas
+    implementation("com.google.maps.android:maps-compose:2.11.4")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
+    implementation ("com.firebase:geofire-android-common:3.2.0")
 }

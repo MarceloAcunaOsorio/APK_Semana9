@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -25,10 +24,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material3.Text
@@ -47,10 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -63,17 +58,22 @@ import com.marceloacuna.myappsemana9.Model.FutureModel
 import com.marceloacuna.myappsemana9.Model.HourlyModel
 import com.marceloacuna.myappsemana9.R
 import com.marceloacuna.myappsemana9.Routes
+import com.marceloacuna.myappsemana9.ui.theme.MyAppSemana9Theme
 
-class LocationActivity(odifier: Modifier, navController: NavHostController,authViewModel: AuthViewModel) : ComponentActivity() {
+class LocationActivity(modifier: Modifier, navController: NavHostController,authViewModel: AuthViewModel) : ComponentActivity() {
     private lateinit var locationHelper: LocationHelper
     private var currentCity by mutableStateOf<String?>("")
     private lateinit var database: DatabaseReference
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-
+        setContentView(R.layout.activity_location)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
@@ -138,7 +138,7 @@ class LocationActivity(odifier: Modifier, navController: NavHostController,authV
 
 
 @Composable
-fun MyApp(modifier: Modifier, navController: NavHostController,authViewModel: AuthViewModel) {
+fun MyApp(modifier: Modifier, navController: NavController, authViewModel: AuthViewModel) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         floatingActionButton = {
@@ -315,7 +315,7 @@ fun MyApp(modifier: Modifier, navController: NavHostController,authViewModel: Au
                 }
             }
         }
-        }
+    }
 }
 
 

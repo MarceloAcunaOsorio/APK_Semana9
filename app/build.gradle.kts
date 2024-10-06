@@ -10,7 +10,7 @@ android {
     namespace = "com.marceloacuna.myappsemana9"
     compileSdk = 34
 
-    defaultConfig {
+     defaultConfig {
         applicationId = "com.marceloacuna.myappsemana9"
         minSdk = 23
         targetSdk = 34

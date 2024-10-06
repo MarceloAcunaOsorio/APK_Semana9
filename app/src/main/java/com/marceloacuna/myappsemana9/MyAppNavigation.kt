@@ -6,7 +6,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.marceloacuna.myappsemana9.Pages.Home
-import com.marceloacuna.myappsemana9.Pages.LocationActivity
 import com.marceloacuna.myappsemana9.Pages.Login
 import com.marceloacuna.myappsemana9.Pages.MyApp
 import com.marceloacuna.myappsemana9.Pages.Registrar
